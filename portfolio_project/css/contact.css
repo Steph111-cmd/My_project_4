@@ -1,0 +1,120 @@
+@import url("style.css");
+
+.contact {
+  max-width: 650px;
+  margin: 80px auto;
+  padding: 70px 50px;
+  background: #111;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(0,255,0,0.25);
+  animation: fadeUp 1s ease;
+  position: relative;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.contact h1 {
+  color: var(--green);
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.contact-intro {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-bottom: 30px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input, textarea {
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  border: 2px solid var(--green);
+  background: rgba(37,43,58,0.85);
+  color: var(--text);
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+input:focus, textarea:focus {
+  border-color: #42e695;
+  box-shadow: 0 0 12px #42e695;
+}
+
+textarea {
+  resize: none;
+  min-height: 140px;
+}
+
+button {
+  background: var(--green);
+  color: #111;
+  padding: 15px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #42e695;
+  box-shadow: 0 0 20px #42e695;
+  transform: translateY(-2px);
+}
+
+#form-message {
+  margin-top: 15px;
+  font-weight: 500;
+}
+
+.contact-info {
+  margin-top: 35px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.contact-info p {
+  margin: 8px 0;
+}
+
+.contact-info i {
+  color: var(--green);
+  margin-right: 8px;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 25px 20px;
+  color: #aaa;
+  margin-top: 60px;
+}
+
+.footer-icons a {
+  color: var(--green);
+  margin: 0 10px;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.footer-icons a:hover {
+  color: #fff;
+  transform: translateY(-5px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .contact {
+    padding: 50px 25px;
+  }
+}

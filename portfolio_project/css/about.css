@@ -1,0 +1,354 @@
+@import url("style.css");
+
+/* =========================
+   PAGE CENTERING
+========================= */
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center; /* horizontal center */
+    align-items: center;     /* vertical center */
+    padding: 20px;
+    text-align: center;
+}
+
+/* =========================
+   GLASS EFFECT WITH MOVING BORDER
+========================= */
+.glass {
+    position: relative; /* needed for pseudo-element */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 60px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    color: #fff;
+    max-width: 1000px;
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Animated moving border for the glass section */
+.glass::before {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    width: calc(100% + 8px);
+    height: calc(100% + 8px);
+    border-radius: 20px;
+    background: conic-gradient(
+        #00ff7f 0deg,
+        #00ff7f 90deg,
+        transparent 180deg,
+        #00ff7f 270deg,
+        #00ff7f 360deg
+    );
+    z-index: -1; /* behind content */
+    animation: rotate-glass-border 4s linear infinite;
+}
+
+@keyframes rotate-glass-border {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* =========================
+   ABOUT ME CONTENT
+========================= */
+.about-me-content {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* LEFT: Text column */
+.about-text {
+    flex: 1;
+    min-width: 250px;
+    text-align: left;
+}
+
+.about-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.about-text .highlights {
+    list-style: none;
+    padding: 0;
+}
+
+.about-text .highlights li {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 25px;
+    transition: color 0.3s ease;
+}
+
+.about-text .highlights li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #00ffc3;
+}
+
+.about-text .highlights li:hover {
+    color: #000000;
+}
+
+/* =========================
+   RIGHT: Image gallery column
+========================= */
+.about-images {
+    flex: 1;
+    min-width: 250px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+/* =========================
+   IMAGES WITH ENHANCED EFFECTS
+========================= */
+.about-images img {
+    position: relative;
+    display: block;
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    z-index: 0;
+    transition: transform 0.5s ease, box-shadow 0.5s ease, filter 0.5s ease;
+    filter: brightness(0.95) contrast(1.1) saturate(1.2);
+}
+
+/* Animated neon border using pseudo-element */
+.about-images img::before {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    width: calc(100% + 8px);
+    height: calc(100% + 8px);
+    border-radius: 15px;
+    background: conic-gradient(
+        #00ff7f 0deg,
+        #00ff7f 90deg,
+        transparent 180deg,
+        #00ff7f 270deg,
+        #00ff7f 360deg
+    );
+    z-index: -1;
+    animation: rotate-border 2s linear infinite;
+}
+/* Button inside images container */
+.about-images .btn-gallery {
+    display: inline-block;
+    margin-top: 20px;   /* space above button */
+    padding: 12px 30px;
+    border-radius: 30px;
+    background: #00d4ff; /* bright neon-blue */
+    color: #111;         /* dark text for contrast */
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+}
+
+/* Hover effect */
+.about-images .btn-gallery:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #00d4ff, 0 0 30px #00d4ff80, 0 0 50px #00d4ff40;
+    background: #00bfff; /* slight darken on hover */
+}
+
+
+/* Rotate animation for image border */
+@keyframes rotate-border {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Hover effects: scale, tilt, glow, vibrant filter */
+.about-images img:hover {
+    transform: scale(1.08) rotate(-1deg);
+    box-shadow: 0 15px 35px rgba(0,255,127,0.6);
+    filter: brightness(1.1) contrast(1.2) saturate(1.4);
+}
+
+/* =========================
+   ADDITIONAL INFO OUTSIDE GLASS (ASTIG VERSION)
+========================= */
+.additional-info {
+    background: linear-gradient(135deg, #0d0d0d, #111, #0d0d0d);
+    padding: 60px 20px;
+    text-align: left;
+    color: #fff;
+}
+
+.additional-info .additional-content {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+/* Neon-glass boxes */
+.neon-box {
+    flex: 1;
+    min-width: 280px;
+    background: rgba(0,0,0,0.4);
+    border-radius: 20px;
+    padding: 25px 30px;
+    box-shadow: 0 0 20px rgba(0,255,127,0.4), 0 0 40px rgba(0,255,127,0.2), 0 0 60px rgba(0,255,127,0.1);
+    border: 1px solid rgba(0,255,127,0.5);
+    transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animated gradient neon border effect */
+.neon-box::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, #00ff7f, #00d4ff, #ff00ff, #ff4500, #00ff7f);
+    background-size: 400% 400%;
+    animation: animate-neon 10s linear infinite;
+    opacity: 0.3;
+    z-index: 0;
+}
+
+@keyframes animate-neon {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Content inside neon box */
+.neon-box h2 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    color: #00ff7f;
+    position: relative;
+    z-index: 1;
+}
+
+.neon-box ul {
+    list-style: disc inside;
+    position: relative;
+    z-index: 1;
+}
+
+.neon-box ul li {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+/* Hover effect for interactivity */
+.neon-box:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 0 30px rgba(0,255,127,0.7), 0 0 60px rgba(0,255,127,0.5), 0 0 90px rgba(0,255,127,0.3);
+    background: rgba(0,0,0,0.6);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .additional-info .additional-content {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .neon-box {
+        min-width: 90%;
+    }
+}
+
+/* =========================
+   RESPONSIVE DESIGN FOR ABOUT
+========================= */
+@media (max-width: 1024px) {
+    .about-text h1 {
+        font-size: 2.2rem;
+    }
+
+    .about-text p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-me-content {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+
+    .about-text h1 {
+        font-size: 2rem;
+    }
+
+    .about-text p {
+        font-size: 1rem;
+    }
+
+    .about-images {
+        grid-template-columns: 1fr; /* stack images vertically */
+    }
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+  padding: 25px 20px;
+  text-align: center;
+  color: #aaa;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  margin-top: 50px;
+}
+
+.footer-icons {
+  margin-top: 15px;
+}
+
+.footer-icons a {
+  color: var(--green);
+  margin: 0 10px;
+  font-size: 18px;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.footer-icons a:hover {
+  transform: translateY(-5px);
+  color: #fff;
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/portfolio.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">Portfolio<span>.</span></div>
+  <label for="menu-toggle" class="menu-icon">
+    <span></span><span></span><span></span>
+  </label>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a class="active" href="portfolio.html">Portfolio</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+
+  </nav>
+</header>
+
+<!-- Portfolio Cards -->
+<section class="grid">
+  <a class="card" href="https://github.com/Steph111-cmd/MY_skillbar" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo">
+    <span>MY Skillbar</span>
+  </a>
+  <a class="card" href="https://github.com/Steph111-cmd/Profile_card" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo">
+    <span>Profile Card</span>
+  </a>
+  <a class="card" href="https://github.com/Steph111-cmd/Profile_Picture" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo">
+    <span>Profile Picture</span>
+  </a>
+  <a class="card" href="https://github.com/Steph111-cmd/WebPortfolio" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo">
+    <span>Web Portfolio</span>
+  </a>
+  <a class="card" href="https://github.com/Steph111-cmd/FameResidence" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo">
+    <span>Fame Residence</span>
+  </a>
+  <a class="card" href="https://github.com/Steph111-cmd/CAPSTONE" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo">
+    <span>CAPSTONE</span>
+  </a>
+</section>
+
+<!-- Custom Modal Gallery -->
+<section class="gallery">
+  <h2 class="gallery-title">Project Images</h2>
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="images/5.jpg" alt="Profile Card">
+    </div>
+    <div class="gallery-item">
+      <img src="images/6.jpg" alt="Web Portfolio">
+    </div>
+    <div class="gallery-item">
+      <img src="images/7.png" alt="Fame Residence">
+    </div>
+    <div class="gallery-item">
+      <img src="images/28.jpg" alt="Web Portfolio">
+    </div>
+  </div>
+</section>
+
+<!-- Modal -->
+<div id="modal" class="modal">
+  <span id="backBtn" class="close">Back</span>
+  <img class="modal-content" id="modalImg">
+</div>
+
+<footer class="footer">
+  <p>© 2025 Stephanie Tornito. All rights reserved.</p>
+  <div class="footer-icons">
+    <a href="https://github.com/Steph111-cmd" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="https://www.linkedin.com/in/stephanie-tornito-849451359/" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://www.facebook.com/usernamenganihahaha" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.youtube.com/@stephanietornito13" target="_blank"><i class="fab fa-youtube"></i></a>
+  </div>
+</footer>
+
+<!-- JS -->
+<script src="js/portfolio.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+</body>
+</html>
